@@ -44,11 +44,14 @@ export default function AboutPage() {
 
       <section className="now-section" aria-labelledby="now-title">
         <h2 id="now-title">Now</h2>
-        <p>Currently learning DevOps and exploring how reliable systems are built, deployed, and scaled.</p>
+        <p>
+          Currently building Puffin Pal, a personal SaaS project for automated invoicing,
+          billing, and payroll management for small to mid-sized companies.
+        </p>
         <ul>
-          <li>Learning Docker, deployment workflows, and cloud fundamentals</li>
-          <li>Currently working on a project built around a complete Docker environment</li>
-          <li>Improving a little every day through consistent hands-on work</li>
+          <li>Exploring multitenant architecture with a Next.js frontend, a NestJS API, and PostgreSQL.</li>
+          <li>Building background processing with Redis and BullMQ, and managing private file storage with SeaweedFS.</li>
+          <li>Organizing the codebase with Turborepo and running services in a consistent Docker environment.</li>
         </ul>
       </section>
 
@@ -67,21 +70,21 @@ export default function AboutPage() {
         <h2 id="now-playing-title">Now playing</h2>
         <a
           className="now-playing-card grid grid-cols-[72px_minmax(0,_1fr)_auto] items-center gap-[16px] text-ink no-underline"
-          href="https://open.spotify.com/track/1jhH7vvy8hoHuc0mGuZsLX"
+          href="https://open.spotify.com/track/739sLmfUkVFoyPtb0C3263?si=aZ1dM9wCS9WyiKEqYB3zOA&amp;utm_source=copy_link"
           target="_blank"
           rel="noreferrer"
-          aria-label="Listen to Little Miss Strange by Jimi Hendrix on Spotify"
+          aria-label="Listen to Girl from the North Country by Bob Dylan on Spotify"
         >
           <img
             className="now-playing-cover block w-[72px] h-[72px] rounded-[3px] object-cover"
-            src={import.meta.env.BASE_URL + 'assets/images/electric-ladyland.jpg'}
-            alt="Electric Ladyland album cover"
+            src={import.meta.env.BASE_URL + 'assets/images/freewheelin-bob-dylan.jpg'}
+            alt="The Freewheelin’ Bob Dylan album cover"
             width="72"
             height="72"
           />
           <span className="now-playing-copy grid min-w-[0] gap-[5px] text-[14px]">
-            <strong>Little Miss Strange</strong>
-            <span>Jimi Hendrix · Electric Ladyland</span>
+            <strong>Girl from the North Country</strong>
+            <span>Bob Dylan · The Freewheelin’ Bob Dylan</span>
           </span>
           <span className="now-playing-link inline-flex items-center gap-[4px] text-muted text-[11px] [transition:color_.2s_ease]">Spotify <ExternalLink size={11} /></span>
         </a>

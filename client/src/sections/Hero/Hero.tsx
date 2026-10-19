@@ -41,7 +41,7 @@ export default function Hero() {
         </button>,{' '}
         <a href="https://www.linkedin.com/in/nirjal-byan/" target="_blank" rel="noreferrer">LinkedIn</a>
         {' '}or on{' '}
-        <a href="https://github.com/nirjalbyanjankar" target="_blank" rel="noreferrer">GitHub</a>.
+        <a href="https://github.com/nirjal-byan" target="_blank" rel="noreferrer">GitHub</a>.
       </p>
       <span className="sr-only" role="status">
         {copyStatus === 'copied' ? 'Email copied!' : copyStatus === 'error' ? 'Could not copy. Please select and copy the email address manually.' : ''}

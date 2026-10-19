@@ -18,7 +18,7 @@ interface ContributionTooltip {
   y: number;
 }
 
-const username = 'nirjalbyanjankar';
+const username = 'nirjal-byan';
 
 export default function GitHubContributions() {
   const [data, setData] = useState<ContributionsResponse | null>(null);

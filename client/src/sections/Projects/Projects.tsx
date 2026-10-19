@@ -1,15 +1,6 @@
-import { ArrowUpRight, Github, ChevronDown, ChevronUp, Coffee, Gem, HandHeart, Dribbble, Landmark, BookOpen } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { ArrowUpRight, Github, ChevronDown, ChevronUp, Figma } from 'lucide-react';
 import { projects } from '../../data/projects';
-const projectIcons: Record<string, LucideIcon> = {
-  'Himalayan Sip': Coffee,
-  'Shangrila Trade Concern': Gem,
-  'Khusimwelfare': HandHeart,
-  'Basketboard': Dribbble,
-  'BondBrokerage': Landmark,
-  'Lord of the Reads': BookOpen,
-};
-const featuredTitles = ['Shangrila Trade Concern', 'Himalayan Sip', 'BondBrokerage'];
+const featuredTitles = ['Puffin Pal', 'Shangrila Trade Concern', 'KhataKitab', 'Basketboard', 'Himalayan Sip', 'Adhi Global', 'BondBrokerage'];
 const orderedProjects = [
   ...featuredTitles.flatMap(title => projects.filter(project => project.title === title)),
   ...projects.filter(project => !featuredTitles.includes(project.title)),
@@ -37,7 +28,6 @@ export default function Projects({ expanded, onExpandedChange }: ProjectsProps) 
     <section id="projects" className="work-section pb-[38px]">
       <div className="section-heading flex items-baseline justify-between gap-[16px] [border-top:1px_solid_var(--line)] [padding:25px_0_28px]"><h2>Projects</h2><span className="eyebrow text-[12px] tracking-[.06em] font-medium text-ink">DESIGN & DEVELOPMENT / 01-{String(visibleProjects.length).padStart(2, '0')}</span></div>
       <div className="project-grid grid grid-cols-[minmax(0,_1fr)]" id="project-list">{orderedProjects.map((project, index) => {
-        const Icon = projectIcons[project.title];
         const visible = index < 3 || expanded;
         return (
           <div
@@ -48,7 +38,21 @@ export default function Projects({ expanded, onExpandedChange }: ProjectsProps) 
             inert={!visible}
           >
           <article className="project">
-            <div className="project-title-row flex items-center justify-between gap-[12px]"><h3><a href={project.demo || project.github} target="_blank" rel="noreferrer">{project.title} <ArrowUpRight size={15} /><Icon size={18} strokeWidth={1.5} aria-hidden="true" /></a></h3>{project.github && <a className="source-link text-muted w-[30px] h-[30px] grid place-items-center" href={project.github} target="_blank" rel="noreferrer" aria-label={project.title + ' source on GitHub'}><Github size={16} /></a>}</div>
+            <div className="project-title-row flex items-center justify-between gap-[12px]">
+              <h3><a href={project.demo || project.github} target="_blank" rel="noreferrer">{project.title} <ArrowUpRight size={15} /></a></h3>
+              <div className="flex items-center gap-[4px] shrink-0">
+                {project.github && (
+                  <a className="source-link text-muted w-[30px] h-[30px] grid place-items-center" href={project.github} target="_blank" rel="noreferrer" aria-label={project.title + ' source on GitHub'}>
+                    <Github size={16} />
+                  </a>
+                )}
+                {project.tags.includes('Figma') && (
+                  <a className="source-link text-muted w-[30px] h-[30px] grid place-items-center" href={project.demo} target="_blank" rel="noreferrer" aria-label={project.title + ' design on Figma'}>
+                    <Figma size={16} />
+                  </a>
+                )}
+              </div>
+            </div>
             <p className="project-description text-[14px] leading-[1.65] text-ink mt-[5px]">{project.desc}</p>
             <ul className="project-tags flex flex-wrap gap-[5px_12px] list-none p-0 [margin:13px_0_0] text-[12px] text-ink" aria-label="Technologies">{project.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
           </article>
