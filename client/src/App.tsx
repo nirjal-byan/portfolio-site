@@ -1,5 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
-import type { MouseEvent as ReactMouseEvent } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -66,11 +65,13 @@ export default function App() {
     const refresh = window.setTimeout(() => ScrollTrigger.refresh(), 650);
     return () => window.clearTimeout(refresh);
   }, [isAboutPage, projectsExpanded]);
-  const handleThemeToggle = (event: ReactMouseEvent<HTMLButtonElement>) => {
+  const themeTransitionActive = useRef(false);
+  const handleThemeToggle = () => {
+    if (themeTransitionActive.current) return;
     const nextTheme = theme === 'light' ? 'dark' : 'light';
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const transitionDocument = document as Document & {
-      startViewTransition?: (callback: () => void) => { ready: Promise<void> };
+      startViewTransition?: (callback: () => void) => { ready: Promise<void>; finished: Promise<void> };
     };
 
     if (!transitionDocument.startViewTransition || reduceMotion) {
@@ -78,11 +79,20 @@ export default function App() {
       return;
     }
 
-    const { clientX: x, clientY: y } = event;
-    const radius = Math.hypot(
-      Math.max(x, window.innerWidth - x),
-      Math.max(y, window.innerHeight - y),
-    );
+    themeTransitionActive.current = true;
+    const enteringDark = nextTheme === 'dark';
+    // A slanted curtain travels across the viewport, reversing with the theme.
+    const curtain = enteringDark
+      ? [
+          'polygon(100% 0, 100% 0, 100% 100%, 120% 100%)',
+          'polygon(38% 0, 100% 0, 100% 100%, 62% 100%)',
+          'polygon(-24% 0, 100% 0, 100% 100%, 0% 100%)',
+        ]
+      : [
+          'polygon(0 0, -20% 0, 0 100%, 0 100%)',
+          'polygon(0 0, 38% 0, 62% 100%, 0 100%)',
+          'polygon(0 0, 100% 0, 124% 100%, 0 100%)',
+        ];
 
     const transition = transitionDocument.startViewTransition(() => {
       flushSync(() => setTheme(nextTheme));
@@ -90,14 +100,17 @@ export default function App() {
 
     transition.ready.then(() => {
       document.documentElement.animate(
-        { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+        { clipPath: curtain },
         {
-          duration: 650,
-          easing: 'cubic-bezier(.16, 1, .3, 1)',
+          duration: 950,
+          easing: 'cubic-bezier(.65, 0, .2, 1)',
           pseudoElement: '::view-transition-new(root)',
         },
       );
     }).catch(() => undefined);
+    transition.finished.catch(() => undefined).finally(() => {
+      themeTransitionActive.current = false;
+    });
   };
   const navigate = (path: '/' | '/about') => {
     if (window.location.pathname === path) return;

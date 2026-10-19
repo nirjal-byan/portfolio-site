@@ -628,3 +628,40 @@ h1 {
     transition: none !important;
   }
 }
+
+/* The two celestial icons orbit through the switch as the curtain opens. */
+.theme-toggle {
+  position: relative;
+  overflow: hidden;
+  transition: border-color .3s ease, background-color .3s ease;
+}
+.theme-toggle:hover {
+  background-color: var(--soft);
+}
+.theme-toggle-icon {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  transition: transform .75s cubic-bezier(.22, 1, .36, 1), opacity .35s ease;
+}
+.theme-toggle-moon {
+  transform: translateY(0) rotate(0);
+  opacity: 1;
+}
+.theme-toggle-sun {
+  transform: translateY(26px) rotate(-90deg) scale(.5);
+  opacity: 0;
+}
+:root[data-theme='dark'] .theme-toggle-moon {
+  transform: translateY(-26px) rotate(90deg) scale(.5);
+  opacity: 0;
+}
+:root[data-theme='dark'] .theme-toggle-sun {
+  transform: translateY(0) rotate(0) scale(1);
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle, .theme-toggle-icon {
+    transition: none;
+  }
+}
