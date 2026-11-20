@@ -27,9 +27,9 @@ export default function Hero() {
         <p>Lalitpur, Nepal</p>
       </div>
       <p className="intro-description">
-        Full stack developer & designer building simple, thoughtful digital experiences.
-        Previously at <a href="#experience">AR Forge Tech</a>, building web applications
-        from interface to database.
+        Software product engineer specializing in product design and full stack development.
+        Currently at <a href="#experience">Adhi Global</a>, turning ideas into complete
+        applications, while exploring personal projects on the side.
       </p>
       <p className="intro-contact mt-[14px]">
         Reach out to me at{' '}

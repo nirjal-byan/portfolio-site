@@ -7,8 +7,15 @@ export const projects = [
     demo: "https://www.figma.com/design/On3sDbtv6aLkKntMyao3Vy/Adhi-Global?node-id=0-1&t=UJ49azETufM5G9bQ-1"
   },
   {
+    title: "Yompi",
+    desc: "An ongoing trekking and tourism discovery platform for Nepal, with an interactive map of real terrain, peaks, passes and trails, and trek details backed by cited sources.",
+    tags: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "PostGIS", "PixiJS", "Docker"],
+    github: "https://github.com/nirjal-byan/yompi",
+    figma: "https://www.figma.com/design/nwxttPD5R2YPSUNhz6mHg7/Yompi?t=sAegcvpV4j8MNivO-0",
+  },
+  {
     title: "Puffin Pal",
-    desc: "An ongoing personal SaaS project for automated invoicing, billing, and payroll management for small to mid-sized companies, built while exploring multitenant architecture.",
+    desc: "A personal SaaS project for automated invoicing, billing, and payroll management for small to mid-sized companies, built while exploring multitenant architecture.",
     tags: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "Redis", "Docker"],
     github: "https://github.com/nirjal-byan/puffin-pal",
   },

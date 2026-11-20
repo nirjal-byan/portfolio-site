@@ -28,8 +28,9 @@ export default function AboutPage() {
 
         <div className="about-copy text-[14px] leading-[1.65]">
           <p>
-            I'm a full stack developer and designer based in Lalitpur. I enjoy taking an idea
-            from its first sketch to a thoughtful interface and the system behind it.
+            I'm a software product engineer based in Lalitpur, specializing in product design.
+            I turn ideas into full stack applications, from the first sketch to a thoughtful
+            interface and the system behind it.
           </p>
           <p>
             Take the work seriously but leave a little room for fun. Away from the screen,
@@ -45,13 +46,13 @@ export default function AboutPage() {
       <section className="now-section" aria-labelledby="now-title">
         <h2 id="now-title">Now</h2>
         <p>
-          Currently building Puffin Pal, a personal SaaS project for automated invoicing,
-          billing, and payroll management for small to mid-sized companies.
+          Currently building Yompi, a trekking and tourism discovery platform for Nepal with an
+          interactive map of real terrain, peaks, passes and trails.
         </p>
         <ul>
-          <li>Exploring multitenant architecture with a Next.js frontend, a NestJS API, and PostgreSQL.</li>
-          <li>Building background processing with Redis and BullMQ, and managing private file storage with SeaweedFS.</li>
-          <li>Organizing the codebase with Turborepo and running services in a consistent Docker environment.</li>
+          <li>Building with a Next.js and TypeScript frontend, a NestJS API, and PostgreSQL with PostGIS.</li>
+          <li>Rendering the interactive map with PixiJS, with trek details backed by cited sources.</li>
+          <li>Running services in a consistent Docker environment, with the design work done in Figma.</li>
         </ul>
       </section>
 

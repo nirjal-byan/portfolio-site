@@ -1,6 +1,6 @@
 import { ArrowUpRight, Github, ChevronDown, ChevronUp, Figma } from 'lucide-react';
 import { projects } from '../../data/projects';
-const featuredTitles = ['Puffin Pal', 'Shangrila Trade Concern', 'KhataKitab', 'Basketboard', 'Himalayan Sip', 'Adhi Global', 'BondBrokerage'];
+const featuredTitles = ['Yompi', 'Puffin Pal','Shangrila Trade Concern', 'KhataKitab', 'Basketboard', 'Himalayan Sip', 'Adhi Global', 'BondBrokerage'];
 const orderedProjects = [
   ...featuredTitles.flatMap(title => projects.filter(project => project.title === title)),
   ...projects.filter(project => !featuredTitles.includes(project.title)),
@@ -46,8 +46,8 @@ export default function Projects({ expanded, onExpandedChange }: ProjectsProps) 
                     <Github size={16} />
                   </a>
                 )}
-                {project.tags.includes('Figma') && (
-                  <a className="source-link text-muted w-[30px] h-[30px] grid place-items-center" href={project.demo} target="_blank" rel="noreferrer" aria-label={project.title + ' design on Figma'}>
+                {(project.figma || project.tags.includes('Figma')) && (
+                  <a className="source-link text-muted w-[30px] h-[30px] grid place-items-center" href={project.figma || project.demo} target="_blank" rel="noreferrer" aria-label={project.title + ' design on Figma'}>
                     <Figma size={16} />
                   </a>
                 )}
