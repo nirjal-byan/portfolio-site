@@ -1,7 +1,7 @@
 export const experiences = [
   {
     company: 'Adhi Global',
-    role: 'Software Engineer',
+    role: 'Product Engineer',
     description: 'Working on full stack development alongside product design in a contract role.',
     period: 'Sep 2026 — Present',
   },

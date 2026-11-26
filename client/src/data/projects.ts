@@ -4,7 +4,8 @@ export const projects = [
     desc: "Website and visual identity design for Adhi Global, the software agency where I currently work, including logo designs, brand concepts, and a complete website design in Figma.",
     tags: ["Figma", "UI/UX Design", "Web Design", "Logo Design", "Brand Identity"],
     github: undefined,
-    demo: "https://www.figma.com/design/On3sDbtv6aLkKntMyao3Vy/Adhi-Global?node-id=0-1&t=UJ49azETufM5G9bQ-1"
+    figma: "https://www.figma.com/design/buLErAkFrRCPHViTzyf00n/Adhi-Global?node-id=0-1&p=f&t=QwkeiqXILhDDZEvJ-0",
+    demo: "https://adhiglobal.com/"
   },
   {
     title: "Yompi",
@@ -24,7 +25,8 @@ export const projects = [
     desc: "A complete website design for a school management system, created in Figma with a focus on clear navigation and an intuitive user experience.",
     tags: ["Figma", "UI/UX Design", "Web Design", "School Management"],
     github: undefined,
-    demo: "https://www.figma.com/design/lBz73ijkYbHH3KluUbCjGJ/Khatakitab?node-id=0-1&t=vBTWcFWCWKDGD6qI-1"
+    figma: "https://www.figma.com/design/2oivJVauGIvM5RukVO24OA/Untitled?node-id=0-1&t=VHW4kaiCYt14PzXi-1",
+    demo: "https://khatakitab.com/"
   },
   {
     title: "Himalayan Sip",
@@ -60,6 +62,13 @@ export const projects = [
     tags: ["Figma", "UI/UX Design", "Finance", "Web Design"],
     github: undefined,
     demo: "https://www.figma.com/design/mNjRnpFh84l4ZBlGLYPRFu/BondBrokerage"
+  },
+  {
+    title: "Backy",
+    desc: "Design for a mobile app that backs up photos and videos to S3 storage, including AWS S3, Backblaze B2, Cloudflare R2, Wasabi, MinIO, or self-hosted servers. Covers the app screens, logo, brand identity, and marketing website.",
+    tags: ["Figma", "UI/UX Design", "Mobile App Design", "Web Design", "Brand Design"],
+    github: undefined,
+    demo: "https://www.figma.com/design/UwitfiFTa0Si9J7COfJSG2/backy?node-id=0-1&t=TOZLrP8R8og2XHBS-1"
   },
   {
     title: "Lord of the Reads",

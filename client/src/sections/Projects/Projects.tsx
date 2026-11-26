@@ -1,6 +1,6 @@
 import { ArrowUpRight, Github, ChevronDown, ChevronUp, Figma } from 'lucide-react';
 import { projects } from '../../data/projects';
-const featuredTitles = ['Yompi', 'Puffin Pal','Shangrila Trade Concern', 'KhataKitab', 'Basketboard', 'Himalayan Sip', 'Adhi Global', 'BondBrokerage'];
+const featuredTitles = ['Yompi', 'Puffin Pal','Shangrila Trade Concern', 'Backy', 'KhataKitab','Basketboard', 'Himalayan Sip', 'Adhi Global', 'BondBrokerage'];
 const orderedProjects = [
   ...featuredTitles.flatMap(title => projects.filter(project => project.title === title)),
   ...projects.filter(project => !featuredTitles.includes(project.title)),
